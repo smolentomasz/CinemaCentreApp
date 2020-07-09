@@ -1,0 +1,11 @@
+:host{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: 3fr 2fr;
+}
+.main-image{
+    background-image: linear-gradient(to right, rgba(24, 35, 44, 0.4), rgba(50, 70, 83, 0.4)), url('/assets/images/cinemaLog.jpg');               
+    background-repeat: no-repeat;
+    background-position: center center; 
+}

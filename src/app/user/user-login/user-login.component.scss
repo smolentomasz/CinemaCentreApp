@@ -1,0 +1,61 @@
+:host{
+    display: flex;
+    width: 100%;
+    height:100%;
+    justify-content: center;
+    text-align: center;
+}
+.login-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.login-main{
+    display: flex;
+    flex-direction: row;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.menu-inputs{
+    align-self: center;
+    width: 100%;
+}
+.login-button{
+    justify-content: center;
+    width: 100%;
+}
+.registry-link{
+    align-self: center;
+    margin-top:10px;
+    color:white;
+}
+.registry-link a:link{
+    color:white;
+    font-weight: bold;
+}
+.registry-link a:visited{
+    color:white;
+    font-weight: bold;
+}
+::ng-deep.mat-form-field-underline {
+    background-color: white !important;
+} 
+::ng-deep .mat-form-field-label {
+    color: white !important;
+}
+::ng-deep input.mat-input-element {
+    color:white !important;
+  }
+.login-title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color:white;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.password-icon{
+    color:white;
+}
