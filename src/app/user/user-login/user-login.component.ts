@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
+import { UserService } from '../user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserLogin } from '../user.model';
 
 @Component({
   selector: 'app-user-login',
@@ -20,7 +24,7 @@ import { FormControl, Validators} from '@angular/forms';
           <mat-error *ngIf="passwordControl.hasError('required')">Password is required!</mat-error>
         </mat-form-field>
       </form>
-      <button mat-raised-button class='login-button'>Login</button>
+      <button mat-raised-button class='login-button' (click)=onSubmit()>Login</button>
       <p class='registry-link'>Don't have an account? <a routerLink="/user/register">Sign up</a>.</p>
     </div>`,
   styleUrls: ['./user-login.component.scss']
@@ -37,10 +41,30 @@ export class UserLoginComponent implements OnInit {
   ]);
 
   public hide = true;
+  private userLogin: UserLogin;
 
-  constructor() { }
+  constructor(private userService: UserService, private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    if (this.emailControl.valid && this.passwordControl.valid){
+      this.userLogin = {
+        email: this.emailControl.value,
+        password: this.passwordControl.value
+      };
+
+      this.userService.loginUser(this.userLogin).subscribe(response => {
+        sessionStorage.setItem('jwtToken', response.token);
+        sessionStorage.setItem('email', response.email);
+        sessionStorage.setItem('userType', response.userType);
+        sessionStorage.setItem('name', response.name);
+        sessionStorage.setItem('surname', response.surname);
+        this.router.navigate(['/']);
+        this.snackBar.open('You have successfully log in!', 'Ok', {duration: 2000});
+      });
+    }
   }
 
 }

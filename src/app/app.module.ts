@@ -11,7 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { UserModule } from './user/user.module';
+import { HomeModule } from './home/home.module';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    UserModule,
+    HomeModule,
+    JwtHelperService
   ],
   providers: [],
   bootstrap: [AppComponent]
