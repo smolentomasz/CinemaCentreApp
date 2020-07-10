@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { UserModule } from './user/user.module';
 import { HomeModule } from './home/home.module';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     ReactiveFormsModule,
     MatIconModule,
     UserModule,
-    HomeModule,
-    JwtHelperService
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

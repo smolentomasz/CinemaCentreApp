@@ -8,7 +8,6 @@ import { HttpHeaders } from '@angular/common/http';
 import { UserRegistry, Login } from './user.model';
 import { Observable } from 'rxjs';
 import { UserLogin } from './user.model';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 const loginHttpOptions = {
   headers: new HttpHeaders({
@@ -33,7 +32,7 @@ export class UserService {
   private userRegistryUrl: string;
   private userLoginUrl: string;
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {
+  constructor(private http: HttpClient) {
     this.userRegistryUrl = 'https://localhost:5001/api/users/register'; 
     this.userLoginUrl = 'https://localhost:5001/api/users/login';
   }
@@ -51,10 +50,5 @@ export class UserService {
     loginHttpOptions.headers = loginHttpOptions.headers.set('Password', userLogin.password);
 
     return this.http.post<Login>(this.userLoginUrl, '', loginHttpOptions);
-  }
-  isAuthenticated(): boolean {
-    const token = sessionStorage.getItem('jwtToken');
-
-    return !this.jwtHelper.isTokenExpired(token);
   }
 }

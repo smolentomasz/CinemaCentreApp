@@ -61,7 +61,7 @@ export class UserLoginComponent implements OnInit {
         sessionStorage.setItem('userType', response.userType);
         sessionStorage.setItem('name', response.name);
         sessionStorage.setItem('surname', response.surname);
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
         this.snackBar.open('You have successfully log in!', 'Ok', {duration: 2000});
       });
     }
