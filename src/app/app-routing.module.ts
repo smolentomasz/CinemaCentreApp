@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserPageComponent } from './user/user-page/user-page.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
-import { AuthGuardGuard as AuthGuard } from './auth-guard.guard';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent},
+  {
+    path: 'home',
+    loadChildren: () => import(`./home/home.module`).then((m) => m.HomeModule),
+    canActivate: [AuthGuard]
+  },
   {
     path: 'user',
     loadChildren: () => import(`./user/user.module`).then((m) => m.UserModule),
   },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

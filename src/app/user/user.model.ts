@@ -10,10 +10,13 @@ export interface UserRegistry{
     password: string;
 }
 
-export interface Login{
+export interface User{
     email: string;
-    token: string;
     userType: string;
     name: string;
     surname: string;
+}
+
+export interface LoginResponse{
+    token: string;
 }

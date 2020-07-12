@@ -1,37 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { UserPageComponent } from './user/user-page/user-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { UserModule } from './user/user.module';
-import { HomeModule } from './home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserLoginComponent,
-    UserRegisterComponent,
-    UserPageComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    UserModule,
-    HomeModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

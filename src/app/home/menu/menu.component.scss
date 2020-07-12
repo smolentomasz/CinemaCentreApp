@@ -1,0 +1,30 @@
+:host{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.main-menu{
+    margin-left:5px;
+}
+.mat-selection-list .mat-list-option {
+    color:gray;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 0.9rem;
+}
+.mat-selection-list :hover{
+    color:#76bdc5;
+    background-color: #23434691;
+}
+.mat-selection-list mat-list-option[aria-selected='true'] {
+    color:#76bdc5;
+    background-color: #23434691;
+    border-bottom: 2px solid #76bdc5;
+}
+.mat-selection-list .mat-divider{
+    background-color:  #3e5c5f91;
+    width:75%;
+    margin:0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
