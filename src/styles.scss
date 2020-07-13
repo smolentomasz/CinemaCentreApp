@@ -71,10 +71,11 @@ $CinemaCentreApp-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Bahnschrift' SemiBold; }
+body { margin: 0; font-family: 'AngularRegular'; }
 
 *{
-  font-family: 'Bahnschrift' SemiBold;;
+  //font-family: 'Bahnschrift' SemiBold;;
+  font-family: 'AngularRegular';
 }
 
 @media (max-width: 575.98px) { 
@@ -110,6 +111,13 @@ h2{
   justify-content: center;
   text-align: center;
   color: gray;
-  font-family: 'Bahnschrift' SemiBold;
-  font-weight: bold;
+  font-family: 'AngularRegular';
+}
+@font-face {
+  font-family: 'AngularRegular';
+  src: url('/assets/fonts/ComicNeue-Angular-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'AngularRegularBold';
+  src: url('/assets/fonts/ComicNeue-Angular-Bold.ttf') format('truetype');
 }

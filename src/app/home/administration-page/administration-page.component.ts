@@ -16,7 +16,7 @@ import { UserService } from 'src/app/user/user.service';
       <h2>Add new movie</h2>
       <mat-divider></mat-divider>
     </div>
-    <div class="administration-schedule">
+    <div class="administration-schedule" [class.mat-elevation-z2]="!isActive">
       <h2>Add new schedule</h2>
       <mat-divider></mat-divider>
       <mat-form-field appearance="fill">
@@ -50,6 +50,7 @@ export class AdministrationPageComponent implements OnInit {
   dataMovies;
   private newSchedule: Schedule;
   activeUser: string;
+  isActive = false;
 
   timeControl = new FormControl('', [
     Validators.required,

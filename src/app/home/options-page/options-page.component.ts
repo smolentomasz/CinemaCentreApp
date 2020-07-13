@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
       <h2>Edit your account</h2>
       <mat-divider></mat-divider>
     </div>
-    <div class="options-delete">
+    <div class="options-delete" [class.mat-elevation-z2]="!isActive">
       <h2>Delete your account</h2>
       <mat-divider></mat-divider>
       <form class='delete-form'>
@@ -34,6 +34,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class OptionsPageComponent implements OnInit {
 
   activeUser: string;
+  isActive = false;
 
   emailControl = new FormControl('', [
     Validators.email,

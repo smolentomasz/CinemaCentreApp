@@ -14,7 +14,7 @@
 }
 .mat-divider {
   background-color: #3e5c5f91;
-  margin: 10px 0 10px 0;
+  margin: 0 0 10px 0;
 }
 .delete-form {
   display: flex;
@@ -22,9 +22,19 @@
   text-align: left;
   justify-content: left;
 }
-.options-delete {
-  text-align: left;
-  justify-content: left;
+.options-delete{
+  display: flex;
+  flex-direction: column;
+  margin:0 auto;
+  height:auto;
+  padding:10px;
+  margin-bottom: 10px;
+}
+.options-edit{
+  display: flex;
+  flex-direction: column;
+  margin:0 auto;
+  
 }
 .delete-inputs {
   width: 250px;
@@ -46,3 +56,6 @@
 .delete-information{
     color:white;
 }
+h2{
+  font-family: 'AngularRegularBold';
+ }
