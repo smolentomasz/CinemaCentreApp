@@ -12,11 +12,14 @@ export interface UserRegistry{
 
 export interface User{
     email: string;
-    userType: string;
-    name: string;
-    surname: string;
+    role: string;
+    unique_name: string;
+    family_name: string;
 }
 
 export interface LoginResponse{
     token: string;
+}
+export interface DeleteResponse{
+    responseMessage: string;
 }

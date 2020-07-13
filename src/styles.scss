@@ -71,10 +71,10 @@ $CinemaCentreApp-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Bahnschrift' SemiBold; }
 
 *{
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Bahnschrift' SemiBold;;
 }
 
 @media (max-width: 575.98px) { 
@@ -110,6 +110,6 @@ h2{
   justify-content: center;
   text-align: center;
   color: gray;
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Bahnschrift' SemiBold;
   font-weight: bold;
 }

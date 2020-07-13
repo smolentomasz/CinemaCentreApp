@@ -12,3 +12,52 @@
     padding-right: 10px;
     padding-top:10px;
 }
+::ng-deep .mat-divider {
+    background-color: #3e5c5f91;
+    margin: 10px 0 10px 0;
+    width:90%
+  }
+.administration-schedule {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: left;
+}
+.administration-schedule .mat-form-field{
+    width: 250px;
+}
+.administration-movie .mat-form-field{
+    width: 250px;
+}
+.add-schedule-button {
+    justify-content: center;
+    width: 250px;
+    height: 40px;
+}
+::ng-deep .mat-form-field-underline {
+    background-color: white !important;
+  }
+  ::ng-deep .mat-form-field-label {
+    color: white !important;
+  }
+  ::ng-deep input.mat-input-element {
+    color: white !important;
+    padding-left:10px;
+  }
+  mat-datepicker-toggle {
+    color: white !important;
+   }
+   .not-empty-select.mat-selected {
+    color: white !important;
+  }
+  
+  ::ng-deep .mat-select-value-text {
+    color: white !important;
+  }
+  ::ng-deep .mat-option-underline{
+      color: white !important;
+  }
+
+ .start-time-label{
+     margin-left:10px;
+ }

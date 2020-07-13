@@ -58,6 +58,7 @@ export class UserLoginComponent implements OnInit {
       this.userService.loginUser(this.userLogin).subscribe(({token}) => {
         sessionStorage.setItem('jwtToken', token);
         this.router.navigate(['']);
+        this.userService.loadUser();
         this.snackBar.open('You have successfully log in!', 'Ok', {duration: 2000});
       });
     }

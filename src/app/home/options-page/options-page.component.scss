@@ -1,14 +1,48 @@
-:host{
-    display: grid;
-    grid-template-rows: 1fr 7fr 3fr;
-    width: 100%;
-    height: 100%;
+:host {
+  display: grid;
+  grid-template-rows: 1fr 7fr 3fr;
+  width: 100%;
+  height: 100%;
 }
-.name-header{
-    color:gray;
-    justify-content: right;
-    text-align: right;
-    font-size: 1rem;
-    padding-right: 10px;
-    padding-top:10px;
+.name-header {
+  color: gray;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-right: 10px;
+  justify-content: right;
+  text-align: right;
+}
+.mat-divider {
+  background-color: #3e5c5f91;
+  margin: 10px 0 10px 0;
+}
+.delete-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+}
+.options-delete {
+  text-align: left;
+  justify-content: left;
+}
+.delete-inputs {
+  width: 250px;
+}
+::ng-deep.mat-form-field-underline {
+  background-color: white !important;
+}
+::ng-deep .mat-form-field-label {
+  color: white !important;
+}
+::ng-deep input.mat-input-element {
+  color: white !important;
+}
+.delte-button {
+  justify-content: center;
+  width: 250px;
+  height: 40px;
+}
+.delete-information{
+    color:white;
 }

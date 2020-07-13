@@ -8,7 +8,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { OptionsPageComponent } from './options-page/options-page.component';
 import { AdministrationPageComponent } from './administration-page/administration-page.component';
-import { FormsModule } from '@angular/forms';;
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import localePL from '@angular/common/locales/pl';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePL, 'pl');
 
 @NgModule({
   declarations: [HomePageComponent, MenuComponent, OptionsPageComponent, AdministrationPageComponent],
@@ -18,7 +27,14 @@ import { FormsModule } from '@angular/forms';;
     MoviesModule,
     MatListModule,
     MatDividerModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class HomeModule { }
