@@ -1,7 +1,6 @@
 export interface Movie{
     description: string;
-    duration: number;
-    moviePoster: string;
+    duration: string;
     name: string;
 }
 export interface Schedule{

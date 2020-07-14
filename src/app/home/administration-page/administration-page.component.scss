@@ -36,8 +36,13 @@
 .administration-movie .mat-form-field{
     width: 250px;
 }
-.add-schedule-button {
+.add-schedule-button{
     justify-content: center;
+    width: 250px;
+    height: 40px;
+}
+.add-movie-button{
+  justify-content: center;
     width: 250px;
     height: 40px;
 }
@@ -64,10 +69,17 @@
   ::ng-deep .mat-option-underline{
       color: white !important;
   }
+  .description-textarea {
+    color: white !important;
+  }
 
  .start-time-label{
      margin-left:10px;
  }
  h2{
   font-family: 'AngularRegularBold';
+ }
+ .file-picker{
+   width:250px;
+   color:white;
  }

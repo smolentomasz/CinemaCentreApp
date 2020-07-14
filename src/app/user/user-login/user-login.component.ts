@@ -4,6 +4,7 @@ import { UserService } from '../user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserLogin } from '../user.model';
+import { filter, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-login',
@@ -60,7 +61,7 @@ export class UserLoginComponent implements OnInit {
         this.router.navigate(['']);
         this.userService.loadUser();
         this.snackBar.open('You have successfully log in!', 'Ok', {duration: 2000});
-      });
+      }, error => this.snackBar.open(error.error, 'Ok', {duration: 2000}));
     }
   }
 

@@ -9,11 +9,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { OptionsPageComponent } from './options-page/options-page.component';
 import { AdministrationPageComponent } from './administration-page/administration-page.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {TextFieldModule} from '@angular/cdk/text-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import localePL from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
@@ -34,7 +36,9 @@ registerLocaleData(localePL, 'pl');
     MatSnackBarModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule,
+    TextFieldModule
   ]
 })
 export class HomeModule { }

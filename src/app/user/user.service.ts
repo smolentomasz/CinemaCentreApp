@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { UserRegistry, LoginResponse, DeleteResponse, User } from './user.model';
+import { UserRegistry, LoginResponse, DeleteResponse, User, EditUser } from './user.model';
 import { Observable, of } from 'rxjs';
 import { UserLogin } from './user.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -25,14 +25,14 @@ const authenticationHeader = {
 export class UserService {
   private userRegistryUrl: string;
   private userLoginUrl: string;
-  private userDeleteUrl: string;
+  private userOperationUrl: string;
   private helper = new JwtHelperService();
   public user$: Observable<User>;
 
   constructor(private http: HttpClient) {
     this.userRegistryUrl = 'https://localhost:5001/api/users/register';
     this.userLoginUrl = 'https://localhost:5001/api/users/login';
-    this.userDeleteUrl = 'https://localhost:5001/api/users/';
+    this.userOperationUrl = 'https://localhost:5001/api/users/';
   }
 
   registerUser(userRegistry: UserRegistry): Observable<UserRegistry> {
@@ -46,7 +46,11 @@ export class UserService {
   }
   deleteUser(email: string): Observable<DeleteResponse>{
     authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
-    return this.http.delete<DeleteResponse>(this.userDeleteUrl + email, authenticationHeader);
+    return this.http.delete<DeleteResponse>(this.userOperationUrl + email, authenticationHeader);
+  }
+  editUser(editUser: EditUser, email: string): Observable<User>{
+    authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
+    return this.http.put<User>(this.userOperationUrl + email, editUser , authenticationHeader);
   }
   isAuthorized(): boolean{
     const token = sessionStorage.getItem('jwtToken');

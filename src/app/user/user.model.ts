@@ -17,9 +17,17 @@ export interface User{
     family_name: string;
 }
 
+export interface EditUser{
+    name: string;
+    surname: string;
+    newPassword: string;
+    oldPassword: string;
+}
+
 export interface LoginResponse{
     token: string;
 }
+
 export interface DeleteResponse{
     responseMessage: string;
 }
