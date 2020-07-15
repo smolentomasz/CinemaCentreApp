@@ -1,0 +1,55 @@
+.name-header{
+    color:gray;
+    justify-content: right;
+    text-align: right;
+    font-size: 1rem;
+    padding-right: 10px;
+    padding-top:10px;
+}
+::ng-deep .mat-form-field-underline {
+    background-color: white !important;
+  }
+  ::ng-deep .mat-form-field-label {
+    color: white !important;
+  }
+  ::ng-deep input.mat-input-element {
+    color: white !important;
+    padding-left:10px;
+  }
+  mat-datepicker-toggle {
+    color: white !important;
+   }
+   .not-empty-select.mat-selected {
+    color: white !important;
+  }
+  
+  ::ng-deep .mat-select-value-text {
+    color: white !important;
+  }
+  ::ng-deep .mat-option-underline{
+      color: white !important;
+  }
+  .seance-hours-container{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: center;
+  }
+  .seance-time{
+      color:white;
+      padding:10px;
+      cursor: pointer;
+      margin:20px;
+      border-radius: 5px;
+  }
+.seance-time:hover{
+    color:#76bdc5;
+    background-color: #23434691;
+}
+.picking-content{
+    text-align: center;
+    justify-content: center;
+}
+.picking-divider{
+    margin-bottom:20px
+}

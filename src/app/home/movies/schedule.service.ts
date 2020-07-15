@@ -24,4 +24,7 @@ export class ScheduleService {
     authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
     return this.http.post<Schedule>(this.scheduleUrl, schedule, authenticationHeader);
   }
+  getSchedulesByMovie(movieId: string): Observable<Schedule>{
+    return this.http.get<Schedule>(this.scheduleUrl + '/' + movieId);
+  }
 }

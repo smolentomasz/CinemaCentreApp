@@ -19,10 +19,11 @@ import {TextFieldModule} from '@angular/cdk/text-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import localePL from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
+import { CinemaScheduleComponent } from './cinema-schedule/cinema-schedule.component';
 registerLocaleData(localePL, 'pl');
 
 @NgModule({
-  declarations: [HomePageComponent, MenuComponent, OptionsPageComponent, AdministrationPageComponent],
+  declarations: [HomePageComponent, MenuComponent, OptionsPageComponent, AdministrationPageComponent, CinemaScheduleComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

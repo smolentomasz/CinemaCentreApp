@@ -98,6 +98,7 @@ import { HttpEventType } from '@angular/common/http';
         mat-raised-button
         class="add-schedule-button"
         (click)="onAddSchedule()"
+        
       >
         Add schedule
       </button>
@@ -184,6 +185,7 @@ export class AdministrationPageComponent implements OnInit {
         description: this.descriptionAddControl.value,
         duration: this.durationAddControl.value,
         name: this.titleAddControl.value,
+        moviePoster: ''
       };
 
       imageFormData.append('movieDetails', JSON.stringify(this.newImage));

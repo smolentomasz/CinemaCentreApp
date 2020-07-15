@@ -1,0 +1,25 @@
+.details-window{
+    width:550px;
+    height: 400px;
+    background-image: linear-gradient(to right, rgba(24, 35, 44, 1), rgba(50, 70, 83, 1));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color:white;
+    text-align: justify;
+}
+.movie-poster-image{
+    height:340px;
+    width:210px;
+}
+.mat-divider{
+    margin-bottom: 25px;
+    background-color:  #3e5c5f91;
+}
+.buy-ticket-button{
+    justify-content: center;
+    width: 250px;
+}
+.close-details-icon{
+    float:right;
+    cursor: pointer;
+}
