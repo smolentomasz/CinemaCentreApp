@@ -13,17 +13,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {TextFieldModule} from '@angular/cdk/text-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import localePL from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
 import { CinemaScheduleComponent } from './cinema-schedule/cinema-schedule.component';
+import { ReservationPageComponent } from './reservation-page/reservation-page.component';
+import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
 registerLocaleData(localePL, 'pl');
 
 @NgModule({
-  declarations: [HomePageComponent, MenuComponent, OptionsPageComponent, AdministrationPageComponent, CinemaScheduleComponent],
+  declarations: [
+    HomePageComponent,
+    MenuComponent,
+    OptionsPageComponent,
+    AdministrationPageComponent,
+    CinemaScheduleComponent,
+    ReservationPageComponent,
+    ReservationDetailsComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -39,7 +50,8 @@ registerLocaleData(localePL, 'pl');
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    TextFieldModule
-  ]
+    TextFieldModule,
+    MatDialogModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

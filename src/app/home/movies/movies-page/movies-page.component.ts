@@ -4,6 +4,7 @@ import { MoviesService } from '../movies.service';
 import { Movie } from '../movie.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
+import { User } from 'src/app/user/user.model';
 
 @Component({
   selector: 'app-movies-page',
@@ -29,7 +30,7 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 })
 export class MoviesPageComponent implements OnInit {
   public moviesData;
-  activeUser;
+  activeUser: User;
   isActive = false;
   constructor(
     private userService: UserService,

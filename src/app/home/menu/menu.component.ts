@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/user/user.service';
+import { User } from 'src/app/user/user.model';
 
 @Component({
   selector: 'app-menu',
@@ -17,7 +19,7 @@ import { Router } from '@angular/router';
         <mat-list-option [routerLink]="['/home/options']">
           Options
         </mat-list-option>
-        <mat-list-option [routerLink]="['/home/administration']">
+        <mat-list-option [routerLink]="['/home/administration']" *ngIf="this.activeUser.role === 'ADMIN'">
           Administration
         </mat-list-option>
         <mat-list-option [routerLink]="['/user/login']">
@@ -29,7 +31,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  activeUser: User;
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.user$.subscribe((x) => (this.activeUser = x));
+  }
 }

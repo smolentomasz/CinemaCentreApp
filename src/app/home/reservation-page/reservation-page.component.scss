@@ -1,0 +1,47 @@
+.name-header{
+    color:gray;
+    justify-content: right;
+    text-align: right;
+    font-size: 1rem;
+    padding-right: 10px;
+    padding-top:10px;
+}
+.picking-divider{
+    margin-bottom:20px
+}
+.seat-content{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.not-selected{
+    color:white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}
+.seat:hover{
+    color:#76bdc5;
+    background-color: #23434691;
+}
+.is-picked {
+    background-color: red;
+}
+.is-selected{
+    color:#76bdc5;
+    background-color: #3d616491;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}
+.add-reservation-content{
+    text-align: center;
+    justify-content: center;
+}
+.summary-button{
+    margin-top:20px;
+}

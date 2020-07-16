@@ -5,6 +5,7 @@ import { MoviesPageComponent } from './movies/movies-page/movies-page.component'
 import { OptionsPageComponent } from './options-page/options-page.component';
 import { AdministrationPageComponent } from './administration-page/administration-page.component';
 import { CinemaScheduleComponent } from './cinema-schedule/cinema-schedule.component';
+import { ReservationPageComponent } from './reservation-page/reservation-page.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,9 @@ const routes: Routes = [
       },
       { path: 'movies', component: MoviesPageComponent },
       { path: 'schedule/:id', component: CinemaScheduleComponent},
-      { path: 'options', component: OptionsPageComponent},
-      { path: 'administration', component: AdministrationPageComponent},
+      { path: 'add_reservation/:id', component: ReservationPageComponent},
+      { path: 'options', component: OptionsPageComponent },
+      { path: 'administration', component: AdministrationPageComponent },
       { path: '**', redirectTo: '' },
     ],
   },

@@ -11,6 +11,7 @@ export interface UserRegistry{
 }
 
 export interface User{
+    nameid: string;
     email: string;
     role: string;
     unique_name: string;

@@ -158,6 +158,8 @@ export class AdministrationPageComponent implements OnInit {
         'pl-PL'
       );
       this.newSchedule = {
+        id: null,
+        movie: null,
         time: this.timeControl.value,
         date,
         movieId: this.movieTitleControl.value,
@@ -182,6 +184,7 @@ export class AdministrationPageComponent implements OnInit {
       imageFormData.append('file', this.seletedFile, this.seletedFile.name);
 
       this.newImage = {
+        id: null,
         description: this.descriptionAddControl.value,
         duration: this.durationAddControl.value,
         name: this.titleAddControl.value,
@@ -195,7 +198,6 @@ export class AdministrationPageComponent implements OnInit {
           this.uploadProgress = Math.round((100 * event.loaded) / event.total);
         } else if (event.type === HttpEventType.Response) {
           this.uploadMessage = 'Upload successfull!';
-          console.log(event.body);
         }
       });
     }
