@@ -15,7 +15,7 @@ $CinemaCentreApp-primary: mat-palette($mat-indigo);
 $CinemaCentreApp-accent: mat-palette($mat-cyan, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$CinemaCentreApp-warn: mat-palette($mat-red);
+$CinemaCentreApp-warn: mat-palette($mat-gray, A200, A100, A400);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".

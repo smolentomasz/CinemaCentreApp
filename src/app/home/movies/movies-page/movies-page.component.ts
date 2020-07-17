@@ -5,13 +5,14 @@ import { Movie } from '../movie.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { User } from 'src/app/user/user.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movies-page',
   template: `
   <div class="name-header">Hi, {{ this.activeUser.unique_name }}</div>
     <div class="movies-content">
-      <div *ngFor="let movie of moviesData" class='movie-section'>
+      <div *ngFor="let movie of dataMovie$ | async" class='movie-section'>
         <div class="movie-poster">
           <img
             [src]="createImagePath(movie.moviePoster)"
@@ -29,7 +30,7 @@ import { User } from 'src/app/user/user.model';
   styleUrls: ['./movies-page.component.scss'],
 })
 export class MoviesPageComponent implements OnInit {
-  public moviesData;
+  dataMovie$: Observable<Movie[]>;
   activeUser: User;
   isActive = false;
   constructor(
@@ -40,12 +41,7 @@ export class MoviesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.user$.subscribe((x) => (this.activeUser = x));
-    this.moviesService.getAllMovies().subscribe(
-      (response) => {
-        (this.moviesData = response);
-      },
-      (error) => console.log(error)
-    );
+    this.dataMovie$ = this.moviesService.getAllMovies();
   }
   createImagePath(moviePoster: string): string {
     return 'https://localhost:5001/' + moviePoster;

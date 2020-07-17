@@ -33,4 +33,15 @@ export class ReservationService {
     authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
     return this.http.post<ResponseMessage>(this.reservationUrl, newReservation, authenticationHeader);
   }
+  getAllReservations(): Observable<Reservation[]>{
+    return this.http.get<Reservation[]>(this.reservationUrl);
+  }
+  getAllUserReservations(userId: number): Observable<Reservation[]>{
+    authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
+    return this.http.get<Reservation[]>(this.reservationUrl + '/user/' + userId, authenticationHeader);
+  }
+  deleteReservation(uuid: string): Observable<ResponseMessage>{
+    authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
+    return this.http.delete<ResponseMessage>(this.reservationUrl + '/' + uuid, authenticationHeader);
+  }
 }

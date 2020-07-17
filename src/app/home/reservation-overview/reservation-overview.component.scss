@@ -1,0 +1,56 @@
+.name-header{
+    color:gray;
+    justify-content: right;
+    text-align: right;
+    font-size: 1rem;
+    padding-right: 10px;
+    padding-top:10px;
+}
+.reservation-info{
+    width:250px;
+    margin:10px 30px 0 30px;
+    max-width: 250px;
+    text-align: center;
+    justify-content: center;
+}
+.overview-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.reservation-image{
+    background-image: url('/assets/images/clapperboard.png');
+    background-size: cover;
+}
+.overview-reserved-seat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    height: 80px;
+    overflow: auto;
+}
+.overview-label{
+    background-color: #0d1a1b91;
+    color:white;
+    margin-bottom:10px;
+    margin-top:10px;
+    font-weight: bold;
+}
+.seats-number{
+margin:10px;
+}
+.ticket-info{
+    font-weight: bold;
+}
+.cancel-reservation-button{
+    background-color: #0d1a1b91;
+    color:white;
+    font-weight: bold;
+}
+.cancel-reservation-button:hover{
+    background-color: #3a424291;
+    color:white;
+    font-weight: bold;
+}

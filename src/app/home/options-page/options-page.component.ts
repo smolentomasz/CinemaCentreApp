@@ -19,7 +19,7 @@ import { EditUser, User } from 'src/app/user/user.model';
         >
         <mat-form-field class="update-inputs">
           <mat-label>Name</mat-label>
-          <input matInput [formControl]="nameControl" />
+          <input matInput [formControl]="nameControl"/>
           <mat-error *ngIf="nameControl.hasError('required')"
             >Name is required!</mat-error
           >
@@ -114,6 +114,7 @@ export class OptionsPageComponent implements OnInit {
   activeUser: User;
   public hide = true;
   private editUser: EditUser;
+  name = 'Name';
 
   emailControl = new FormControl('', [Validators.email, Validators.required]);
   nameControl = new FormControl('', [Validators.required]);

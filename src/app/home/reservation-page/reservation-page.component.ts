@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs/operators';
 import { map, take } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ReservationDetailsComponent } from '../reservation-details/reservation-details.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-reservation-page',
@@ -37,6 +38,7 @@ import { ReservationDetailsComponent } from '../reservation-details/reservation-
           {{ seat.seatNumber }}
         </div>
       </div>
+      <div class="screen">S C R E E N</div>
       <button mat-raised-button (click)='onSummaryOpen(this.seanceId, this.seatsToBuy)' class='summary-button'>Summary</button>
     </div>
   `,
@@ -56,7 +58,8 @@ export class ReservationPageComponent implements OnInit {
     private route: ActivatedRoute,
     private reservationService: ReservationService,
     private userService: UserService,
-    private reservationDialog: MatDialog
+    private reservationDialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -96,13 +99,19 @@ export class ReservationPageComponent implements OnInit {
   }
 
   onSummaryOpen(seanceId: number, seatsNumbers: Array<number>): void{
-    this.reservationDialog.open(ReservationDetailsComponent, {
-      data: {
-        seanceId,
-        seatsNumbers,
-        user: this.activeUser
-      },
-      panelClass: 'details-dialog-container'
-    });
+    if (this.seatsToBuy.length === 0){
+      this.snackBar.open('You have to pick one seat at least!', 'Ok', {duration: 2000});
+    }
+    else{
+      this.reservationDialog.open(ReservationDetailsComponent, {
+        data: {
+          seanceId,
+          seatsNumbers,
+          user: this.activeUser
+        },
+        panelClass: 'details-dialog-container'
+      });
+    }
+    
   }
 }

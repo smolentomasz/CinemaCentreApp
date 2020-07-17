@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Schedule } from './movie.model';
 import { Observable } from 'rxjs';
+import { ResponseMessage } from '../home.model';
 
 const authenticationHeader = {
   headers: new HttpHeaders({
@@ -20,9 +21,9 @@ export class ScheduleService {
   }
 
 
-  addNewSchedule(schedule: Schedule): Observable<Schedule>{
+  addNewSchedule(schedule: Schedule): Observable<ResponseMessage>{
     authenticationHeader.headers = authenticationHeader.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('jwtToken'));
-    return this.http.post<Schedule>(this.scheduleUrl, schedule, authenticationHeader);
+    return this.http.post<ResponseMessage>(this.scheduleUrl, schedule, authenticationHeader);
   }
   getSchedulesByMovie(movieId: string): Observable<Schedule[]>{
     return this.http.get<Schedule[]>(this.scheduleUrl + '/' + movieId);

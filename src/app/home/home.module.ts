@@ -23,6 +23,8 @@ import { CinemaScheduleComponent } from './cinema-schedule/cinema-schedule.compo
 import { ReservationPageComponent } from './reservation-page/reservation-page.component';
 import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReservationOverviewComponent } from './reservation-overview/reservation-overview.component';
+import {MatCardModule} from '@angular/material/card';
 registerLocaleData(localePL, 'pl');
 
 @NgModule({
@@ -34,6 +36,7 @@ registerLocaleData(localePL, 'pl');
     CinemaScheduleComponent,
     ReservationPageComponent,
     ReservationDetailsComponent,
+    ReservationOverviewComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +55,7 @@ registerLocaleData(localePL, 'pl');
     MatIconModule,
     TextFieldModule,
     MatDialogModule,
+    MatCardModule
   ],
 })
 export class HomeModule {}

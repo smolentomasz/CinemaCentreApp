@@ -19,8 +19,8 @@ export class MoviesService {
     this.moviesGetAllUrl = 'https://localhost:5001/api/movies';
   }
 
-  getAllMovies(){
-    return this.http.get(this.moviesGetAllUrl);
+  getAllMovies(): Observable<Movie[]>{
+    return this.http.get<Movie[]>(this.moviesGetAllUrl);
   }
   addNewMovie(newData: FormData){
     return this.http.post(this.moviesGetAllUrl, newData, {

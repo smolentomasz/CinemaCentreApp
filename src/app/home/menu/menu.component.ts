@@ -12,7 +12,7 @@ import { User } from 'src/app/user/user.model';
         <mat-list-option [routerLink]="['/home/movies']">
           Movies
         </mat-list-option>
-        <mat-list-option [routerLink]="['/home/movies']">
+        <mat-list-option [routerLink]="['/home/overview']">
           Reservations
         </mat-list-option>
         <mat-divider></mat-divider>

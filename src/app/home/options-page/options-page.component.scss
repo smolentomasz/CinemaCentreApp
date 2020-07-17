@@ -69,3 +69,12 @@ h2{
 .edit-user-button{
   width:250px;
 }
+::ng-deep .mat-form-field-placeholder{
+
+  color:white;
+}
+
+::ng-deep .mat-focused .mat-form-field-placeholder{
+
+  color:white;
+}

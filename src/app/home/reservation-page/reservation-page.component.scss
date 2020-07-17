@@ -23,12 +23,16 @@
     cursor: pointer;
     align-items: center;
 }
-.seat:hover{
+.not-selected:hover{
     color:#76bdc5;
     background-color: #23434691;
 }
 .is-picked {
     background-color: red;
+}
+.is-picked:hover {
+    background-color: red;
+    color:white;
 }
 .is-selected{
     color:#76bdc5;
@@ -43,5 +47,9 @@
     justify-content: center;
 }
 .summary-button{
+    margin-top:20px;
+}
+.screen{
+    color:white;
     margin-top:20px;
 }

@@ -93,6 +93,6 @@ export class ReservationDetailsComponent implements OnInit {
       (res) => console.log(res),
       (error) => console.log(error)
     );
-    this.router.navigate(['/home/movies']);
+    this.router.navigate(['/home/overview']);
   }
 }
